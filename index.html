@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  
+  
+    
+</head>
+<body>
+
+  <div class="ticket">
+    <div class="section">
+      <div class="section-header">BUS INTRASTATE PASS</div>
+      <div class="container">
+        <div class="square">QR</div>
+        <div class="box" id="box1">
+          <!-- <input type="color" class="color-picker" onchange="changeColor('box1', this.value)"> -->
+          <div class="box-content" contenteditable="true">2 STATE</div>
+    
+        </div>
+    
+        <div class="box" id="box2">
+         
+          <div class="box-content" contenteditable="true">DEC 2023 STUDENT</div>
+      
+        </div>
+      </div>
+    </div>
+
+    <div id="currentDate"></div>
+
+    <footer class="footer">
+      <div class="footer-section section-1"></div>
+      <div class="footer-section section-2"></div>
+      <div class="footer-section section-3"></div>
+    </footer>
+
+   
+    <div id="countdown"></div>
+  
+
+  </div>
+
+<script>
+   function updateCurrentDate() {
+      const currentDateElement = document.getElementById("currentDate");
+
+      setInterval(function() {
+        const now = new Date();
+        const formattedDate = now.toLocaleDateString();
+        const formattedTime = now.toLocaleTimeString();
+
+        currentDateElement.textContent = `Current Date and Time: ${formattedDate} ${formattedTime}`;
+      }, 1000);
+    }
+
+    // Initial update
+    updateCurrentDate();
+
+
+  function updateCountdown() {
+    const countdownElement = document.getElementById("countdown");
+
+    const expirationTime = new Date();
+    expirationTime.setHours(expirationTime.getHours() + 22);
+    expirationTime.setMinutes(expirationTime.getMinutes() + 34);
+    expirationTime.setSeconds(expirationTime.getSeconds() + 34);
+
+    setInterval(function() {
+      const now = new Date();
+      const timeDifference = expirationTime - now;
+
+      if (timeDifference > 0) {
+        const hours = Math.floor(timeDifference / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+        countdownElement.textContent = `Expires in: ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+      } else {
+        countdownElement.textContent = "Expired!";
+      }
+    }, 1000);
+  }
+
+  // Initial update
+  updateCountdown();
+</script>
+
+</body>
+</html>

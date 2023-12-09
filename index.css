@@ -1,0 +1,124 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.ticket {
+  border: 1px solid #000;
+  padding: 20px;
+  height: 60vh;
+  max-width: 70%;
+  margin-top: 20px; /* Adjust the top margin as needed */
+}
+
+    .section {
+      margin: 0 auto; /* Center the element horizontally */
+      margin-bottom: 100px;
+      align-items: center;
+      max-width: 60%;
+    }
+    
+    .section-header {
+      font-size: 24px;
+    }
+
+    .square {
+      width: 100px;
+      height: 100px;
+      border: 1px solid #000;
+      margin-right: 50px; /* Adjust the margin to control the gap between the square and containers */
+    }
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 10px 0; /* Adjust the margin to control the gap */
+      align-items: center;
+    }
+
+    .box {
+      width: 50vh;
+      height: 100px;
+      /* border: 1px solid #000; */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      background: linear-gradient(to bottom, #2388FD, #93C0FE, #FCFEFF, #93C0FE, #2388FD);
+    
+    }
+
+  .box-content {
+    
+  }
+
+    .section-header {
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .expiration {
+      color: red;
+    }
+
+    .footer {
+      height: 10px;
+    }
+
+    footer {
+      display: flex;
+      height: 50px;
+      animation: blink 0.5s infinite alternate;
+    }
+
+    .footer-section {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    #currentDate {
+      font-size: 24px;
+      color: green;
+      margin-top: auto; /* Push #currentDate to the bottom */
+    }
+    #countdown {
+      font-size: 24px;
+      color: red;
+    }
+
+    .section-1 {
+      background-color: #B19089;
+    }
+
+    .section-2 {
+      background-color: #8AB2B5;
+    }
+
+    .section-3 {
+      background-color: #D94B6D;
+    }
+
+    @keyframes blink {
+      0%, 49.9% {
+        visibility: visible;
+      }
+      50%, 100% {
+        visibility: hidden;
+      }
+    }
+
+    footer:hover {
+      animation: blink 1s steps(1) infinite;
+    }
+
+    #currentDate {
+      align-items: center;
+    }
